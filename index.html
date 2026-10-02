@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimistic Energy & Tech | Solar & Power Solutions</title>
+    
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --primary-gold-hover: #F1C40F;
+            --navy-dark: #060A17;
+            --navy-bg: #0B132B;
+            --navy-card: #1C2541;
+            --text-light: #F4F6F8;
+            --border-color: #3A506B;
+            --whatsapp-green: #25D366;
+            --whatsapp-hover: #1EBE57;
+        }
+
+        body {
+            background-color: var(--navy-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Navbar & Header Branding */
+        .bg-navy-dark {
+            background-color: var(--navy-dark) !important;
+            border-bottom: 2px solid var(--primary-gold);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.4));
+            image-rendering: -webkit-optimize-contrast;
+            transition: transform 0.3s ease;
+        }
+
+        .brand-container:hover .logo-img {
+            transform: scale(1.05);
+        }
+
+        .navbar-brand-text {
+            color: var(--primary-gold) !important;
+            font-weight: 700;
+            font-size: 1.35rem;
+            letter-spacing: 0.5px;
+            text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .nav-link {
+            color: var(--text-light) !important;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-gold) !important;
+        }
+
+        /* Cards & Container Elements */
+        .card-custom {
+            background-color: var(--navy-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-light);
+            border-radius: 8px;
+        }
+
+        .card-custom-gold-border {
+            background-color: var(--navy-card);
+            border: 1px solid var(--primary-gold);
+            color: var(--text-light);
+            border-radius: 8px;
+        }
+
+        .text-gold {
+            color: var(--primary-gold) !important;
+        }
+
+        .hero-section {
+            background: linear-gradient(180deg, var(--navy-card) 0%, var(--navy-bg) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+        }
+
+        /* Buttons */
+        .btn-gold {
+            background-color: var(--primary-gold);
+            color: var(--navy-dark);
+            font-weight: bold;
+            border: none;
+            transition: background 0.3s;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--primary-gold-hover);
+            color: var(--navy-dark);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green);
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            transition: background 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--whatsapp-hover);
+            color: #fff;
+        }
+
+        /* Form Control Styling */
+        .form-control-custom, .form-select-custom {
+            background-color: var(--navy-bg);
+            border: 1px solid var(--border-color);
+            color: #fff;
+        }
+
+        .form-control-custom:focus, .form-select-custom:focus {
+            background-color: var(--navy-bg);
+            border-color: var(--primary-gold);
+            color: #fff;
+            box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+        }
+
+        .result-box {
+            background-color: var(--navy-bg);
+            border-left: 5px solid var(--primary-gold);
+            border-radius: 0 5px 5px 0;
+            display: none;
+        }
+
+        .contact-box {
+            background-color: var(--navy-dark);
+            border: 1px solid var(--primary-gold);
+            border-radius: 8px;
+        }
+
+        .contact-link {
+            color: var(--primary-gold);
+            text-decoration: none;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg bg-navy-dark sticky-top">
+        <div class="container">
+            <a class="brand-container" href="#">
+                <img src="logo.png" alt="Optimistic Energy & Tech Logo" class="logo-img" onerror="this.style.display='none'">
+                <span class="navbar-brand-text">Optimistic Energy & Tech</span>
+            </a>
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-3 align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#vision">Vision</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#calculator">Sizing Calculator</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#request">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+
+        <!-- Hero Section -->
+        <section class="hero-section text-center p-5 mb-5">
+            <h1 class="display-5 text-gold mb-3 fw-bold">Reliable, Smart & Sustainable Energy Solutions</h1>
+            <p class="lead mx-auto text-secondary-light" style="max-width: 750px;">
+                Empower your home or business with tailored solar power systems, precision PV array designs, diagnostic support, maintenance, and robust electrical backup solutions.
+            </p>
+        </section>
+
+        <!-- Vision Section -->
+        <section id="vision" class="mb-5">
+            <h2 class="text-center text-gold mb-4">Our Vision & Core Purpose</h2>
+            <div class="card card-custom p-4">
+                <p>At <strong>Optimistic Energy & Tech</strong>, we strive to engineer reliable energy resilience for homes and commercial establishments. Our vision is to eliminate energy downtime through expertly engineered photovoltaic array designs, hybrid and off-grid inverter setups, and precise battery storage solutions.</p>
+                <p class="mb-0">We combine deep technical mastery, strict compliance with SANS electrical standards, and customer-first design to deliver long-term peace of mind and operational efficiency.</p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="mb-5">
+            <h2 class="text-center text-gold mb-4">Services We Offer</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-custom h-100 p-4">
+                        <h4 class="text-gold mb-3">Solar System Installation</h4>
+                        <p class="card-text">Complete turn-key hybrid and off-grid solar designs tailored to residential and commercial load profiles.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-custom h-100 p-4">
+                        <h4 class="text-gold mb-3">Solar Panel Cleaning & Maintenance</h4>
+                        <p class="card-text">Professional photovoltaic module cleaning and routine visual inspections to restore full power generation efficiency.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-custom h-100 p-4">
+                        <h4 class="text-gold mb-3">Inverter & Battery Diagnostics</h4>
+                        <p class="card-text">Technical troubleshooting, surge analysis, C-rating evaluations, and battery management system (BMS) cell balancing.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-custom h-100 p-4">
+                        <h4 class="text-gold mb-3">Electrical & Motor Protection</h4>
+                        <p class="card-text">Sub-distribution board wiring, circuit protection integration, VFD parameter configurations, and motor surge mitigation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solar Calculator Section -->
+        <section id="calculator" class="mb-5">
+            <h2 class="text-center text-gold mb-4">Design Your Solution</h2>
+            <div class="card card-custom-gold-border p-4">
+                <h4 class="text-gold mb-2">Estimate Your Solar System Requirements</h4>
+                <p class="text-secondary-light mb-4">Enter your average monthly electricity bill to calculate an ideal equipment baseline.</p>
+                
+                <div class="mb-3">
+                    <label for="monthlyExpense" class="form-label fw-bold">Monthly Electricity Expense (R):</label>
+                    <input type="number" class="form-control form-control-custom" id="monthlyExpense" placeholder="e.g. 2500" min="100">
+                </div>
+                
+                <button class="btn btn-gold w-100 py-3 mt-2" onclick="calculateSolution()">Calculate System Size</button>
+
+                <div class="result-box p-4 mt-4" id="calcResult">
+                    <h5 class="text-gold mb-3">Recommended System Specification:</h5>
+                    <div id="systemSpec"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Request & Contact Section -->
+        <section id="request" class="mb-5">
+            <h2 class="text-center text-gold mb-4">Get In Touch / Submit Inquiry</h2>
+            
+            <div class="row g-4">
+                <!-- Direct Contact Details -->
+                <div class="col-md-5">
+                    <div class="card contact-box p-4 h-100">
+                        <h4 class="text-gold mb-3">Direct Phone & WhatsApp</h4>
+                        <p>Reach out anytime to speak directly with our engineering team for consultations or site visits.</p>
+                        <hr class="border-secondary my-3">
+                        
+                        <!-- Line 1 -->
+                        <div class="mb-3">
+                            <strong class="d-block text-gold">Primary Contact:</strong>
+                            <a href="tel:+27622966780" class="contact-link fs-6 d-block mb-1">
+                                <i class="bi bi-telephone-fill me-1"></i> Call: +27 (0)62 296 6780
+                            </a>
+                            <a href="https://wa.me/27622966780?text=Hello%20Optimistic%20Energy%20%26%20Tech,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="btn btn-whatsapp btn-sm w-100 mt-1">
+                                <i class="bi bi-whatsapp me-1"></i> WhatsApp 062 296 6780
+                            </a>
+                        </div>
+
+                        <!-- Line 2 -->
+                        <div class="mb-3">
+                            <strong class="d-block text-gold">Secondary Contact:</strong>
+                            <a href="tel:+27695048964" class="contact-link fs-6 d-block mb-1">
+                                <i class="bi bi-telephone-fill me-1"></i> Call: +27 (0)69 504 8964
+                            </a>
+                            <a href="https://wa.me/27695048964?text=Hello%20Optimistic%20Energy%20%26%20Tech,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="btn btn-whatsapp btn-sm w-100 mt-1">
+                                <i class="bi bi-whatsapp me-1"></i> WhatsApp 069 504 8964
+                            </a>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <strong class="d-block text-gold">Email Address:</strong>
+                            <a href="mailto:optimisticenergytech@gmail.com" class="contact-link fs-6">
+                                <i class="bi bi-envelope-fill me-1"></i> optimisticenergytech@gmail.com
+                            </a>
+                        </div>
+
+                        <div class="mt-auto pt-3">
+                            <small class="text-secondary">Hours: Monday – Saturday | 08:00 – 17:00</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Form with Choice of Quote vs Service -->
+                <div class="col-md-7">
+                    <div class="card card-custom p-4 h-100">
+                        <h4 class="text-gold mb-3">Submit Request via Email</h4>
+                        
+                        <form id="serviceForm" action="https://formspree.io/f/xdekvvdz" method="POST">
+                            <!-- Full Name -->
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-bold">Full Name:</label>
+                                <input type="text" name="name" class="form-control form-control-custom" id="name" required placeholder="Your full name">
+                            </div>
+
+                            <!-- Contact -->
+                            <div class="mb-3">
+                                <label for="contact" class="form-label fw-bold">Email Address / Phone Number:</label>
+                                <input type="text" name="contact" class="form-control form-control-custom" id="contact" required placeholder="082 123 4567 or email@example.com">
+                            </div>
+
+                            <!-- Select Quote or Request Service -->
+                            <div class="mb-3">
+                                <label for="requestType" class="form-label fw-bold">I would like to:</label>
+                                <select name="request_type" class="form-select form-select-custom" id="requestType">
+                                    <option value="Request a Quote">Request a Quote / Pricing</option>
+                                    <option value="Request a Service">Request a Service / Inspection</option>
+                                </select>
+                            </div>
+
+                            <!-- Service Selection -->
+                            <div class="mb-3">
+                                <label for="serviceType" class="form-label fw-bold">Service Category:</label>
+                                <select name="service" class="form-select form-select-custom" id="serviceType">
+                                    <option value="Solar Installation">Solar System Installation</option>
+                                    <option value="Panel Cleaning">Solar Panel Cleaning & Maintenance</option>
+                                    <option value="Inverter / Battery Diagnostics">Inverter / Battery Diagnostics</option>
+                                    <option value="Commercial Backup Solution">Commercial Backup Solution</option>
+                                    <option value="Technical Consulting">Technical Consulting & Electrical Engineering</option>
+                                </select>
+                            </div>
+
+                            <!-- Site Details / Message -->
+                            <div class="mb-3">
+                                <label for="notes" class="form-label fw-bold">Site Details / Requirements:</label>
+                                <textarea name="message" class="form-control form-control-custom" id="notes" rows="3" placeholder="Mention array size, roof type, primary appliances, or specific maintenance needs..."></textarea>
+                            </div>
+
+                            <input type="hidden" name="_subject" value="New Inquiry - Optimistic Energy & Tech">
+
+                            <button type="submit" id="submitBtn" class="btn btn-gold w-100 py-3 mt-2">Submit Request via Email</button>
+                        </form>
+
+                        <!-- Success Alert Message -->
+                        <div id="formSuccess" class="alert alert-success text-center mt-4" style="display:none;" role="alert">
+                            Thank you! Your request has been successfully transmitted. Our technical team will review your requirements and reach out promptly.
+                        </div>
+
+                        <!-- Direct Choice WhatsApp Actions -->
+                        <div class="text-center my-3">
+                            <span class="text-secondary small">—— OR CHAT DIRECTLY ON WHATSAPP ——</span>
+                        </div>
+
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <a href="https://wa.me/27622966780?text=Hello%20Optimistic%20Energy%20%26%20Tech,%20I%20would%20like%20to%20request%20a%20quote." target="_blank" class="btn btn-whatsapp btn-sm w-100 py-2">
+                                    <i class="bi bi-whatsapp"></i> Request a Quote
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a href="https://wa.me/27622966780?text=Hello%20Optimistic%20Energy%20%26%20Tech,%20I%20would%20like%20to%20request%20a%20service." target="_blank" class="btn btn-whatsapp btn-sm w-100 py-2">
+                                    <i class="bi bi-whatsapp"></i> Request a Service
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 bg-navy-dark border-top border-secondary text-secondary">
+        <div class="container">
+            <p class="mb-0">&copy; Optimistic Energy & Tech. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Solar System Sizing Calculator
+        function calculateSolution() {
+            const expense = parseFloat(document.getElementById('monthlyExpense').value);
+            const resultBox = document.getElementById('calcResult');
+            const specOutput = document.getElementById('systemSpec');
+
+            if (isNaN(expense) || expense <= 0) {
+                alert('Please enter a valid monthly electricity amount.');
+                return;
+            }
+
+            let inverterSize = "";
+            let batteryCapacity = "";
+            let panelCapacity = "";
+
+            if (expense < 1500) {
+                inverterSize = "3.6 kW Hybrid Inverter";
+                batteryCapacity = "5.12 kWh LiFePO4 Lithium Battery";
+                panelCapacity = "4x 550W Solar Panels";
+            } else if (expense >= 1500 && expense < 3500) {
+                inverterSize = "5 kW / 6 kW Hybrid Inverter";
+                batteryCapacity = "10.24 kWh LiFePO4 Battery Bank";
+                panelCapacity = "6x to 8x 550W High-Efficiency Solar Panels";
+            } else {
+                inverterSize = "8 kW to 12 kW Single-Phase / 3-Phase Inverter Setup";
+                batteryCapacity = "14.3 kWh to 20 kWh LiFePO4 High-Capacity Bank";
+                panelCapacity = "10x to 16x 550W Solar Panels";
+            }
+
+            specOutput.innerHTML = `
+                <strong>Inverter Capacity:</strong> ${inverterSize}<br>
+                <strong>Battery Storage:</strong> ${batteryCapacity}<br>
+                <strong>PV Array:</strong> ${panelCapacity}<br><br>
+                <small class="text-secondary">Note: This is an estimated baseline. Fill in the form below or chat with us on WhatsApp to schedule a precise technical site inspection and official quotation.</small>
+            `;
+            resultBox.style.display = 'block';
+        }
+
+        // Silent AJAX Form Submission via Formspree
+        const form = document.getElementById('serviceForm');
+        const formSuccess = document.getElementById('formSuccess');
+        const submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Transmitting...";
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    formSuccess.style.display = 'block';
+                    form.reset();
+                    submitBtn.innerText = "Request Sent Successfully!";
+                } else {
+                    alert("Submission failed. Please check your network connection or message us directly via WhatsApp.");
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = "Submit Request via Email";
+                }
+            } catch (error) {
+                alert("An error occurred while sending your request. Please use our direct WhatsApp or phone contacts.");
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Submit Request via Email";
+            }
+        });
+    </script>
+</body>
+</html>
