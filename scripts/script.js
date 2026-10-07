@@ -1,5 +1,5 @@
 function calculateSolution() {
-    const expense = parseFloat(document.getElementById('expense').value);
+    const expense = parseFloat(document.getElementById('monthlyExpense').value);
     const resultBox = document.getElementById('calcResult');
     const specOutput = document.getElementById('systemSpec');
 
@@ -51,34 +51,36 @@ const form = document.getElementById('serviceForm');
 const formSuccess = document.getElementById('formSuccess');
 const submitBtn = document.getElementById('submitBtn');
 
-form.addEventListener('submit', async function(event) {
-    event.preventDefault();
-    submitBtn.disabled = true;
-    submitBtn.innerText = "Transmitting...";
+if (form) {
+    form.addEventListener('submit', async function(event) {
+        event.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Transmitting...";
 
-    const formData = new FormData(form);
+        const formData = new FormData(form);
 
-    try {
-        const response = await fetch(form.action, {
-            method: form.method,
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                formSuccess.style.display = 'block';
+                form.reset();
+                submitBtn.innerText = "Request Sent Successfully!";
+            } else {
+                alert("Submission failed. Please check your network connection.");
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Submit Request via Email";
             }
-        });
-
-        if (response.ok) {
-            formSuccess.style.display = 'block';
-            form.reset();
-            submitBtn.innerText = "Request Sent Successfully!";
-        } else {
-            alert("Submission failed. Please check your network connection.");
+        } catch (error) {
+            alert("An error occurred while sending your request.");
             submitBtn.disabled = false;
             submitBtn.innerText = "Submit Request via Email";
         }
-    } catch (error) {
-        alert("An error occurred while sending your request.");
-        submitBtn.disabled = false;
-        submitBtn.innerText = "Submit Request via Email";
-    }
-});
+    });
+}
